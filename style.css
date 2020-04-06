@@ -1,0 +1,48 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+    }
+    
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(219, 141, 105), rgb(139, 134, 132))
+}
+.calculatorContainer {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6,100px);
+    margin-top: 50px;
+    
+}
+.calculatorContainer > button {
+    outline: none;
+    border: 1px black solid;
+    font-size: 2rem;
+}
+.span-two {
+    grid-column: span 2;
+}
+
+.displayScreen{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    flex-direction: column;
+    height: 100%;
+    background-color: grey;
+    color: white;
+    border: 1px black solid;
+    font-size: 2rem;
+
+}
+#allClear{
+    background-color: rgb(233, 108, 31);
+}
+#submit {
+    background-color: rgb(207, 205, 204);
+}
