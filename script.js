@@ -1,11 +1,46 @@
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
-const equalsButton = document.querySelector('#submit');
+const backSpaceButton = document.querySelector('#clear');
 const allClearButton = document.querySelector('#allClear');
-const deleteButton = document.querySelector('#backspace');
-const previousOperand = document.querySelector('previous-operand');
-const currentOperand = document.querySelector('current-operand');
+const equalsButton = document.querySelector('#evaluate');
 
+function displayOutput(num){
+    document.getElementById('current').innerText = num;
+}
+
+numberButtons.forEach(number => {
+    number.addEventListener('click', () => {
+        var displayNumber = document.getElementById('current').innerText;
+        displayNumber += number.id;
+        return displayOutput(displayNumber);
+    })
+})
+
+operatorButtons.forEach(operator => {
+    operator.addEventListener('click', () => {
+        var displayOperator = document.getElementById('current').innerText;
+        displayOperator += operator.id;
+        return displayOutput(displayOperator);
+    })
+})
+
+backSpaceButton.addEventListener('click', () => {
+    num = document.getElementById('current').innerText.slice(0,-1)
+    return displayOutput(num);
+})
+
+allClearButton.addEventListener('click', () => {
+    curNum = document.getElementById('current').innerText
+    curNum = '';  
+    return displayOutput(curNum);
+})
+
+equalsButton.addEventListener('click', () => {
+    console.log(displayOutput())
+})
+
+
+/*
 function add (a,b) {
     return a+b;
 }
@@ -36,23 +71,4 @@ function operate (operator,a,b){
             break;
     }
 }
-
-function updateDisplay (){
-    numberButtons.forEach(number => {
-        number.addEventListener('click', () => {
-            document.getElementById('current-operand').innerHTML = number.innerText;
-        })
-    })
-    operatorButtons.forEach(operator => {
-        operator.addEventListener('click', () => {
-            document.getElementById('current-operand').innerHTML = operator.innerText;
-        })
-    })
-    
-}
-function append () {
-  
-}
-
-updateDisplay ();
-append();
+*/
