@@ -18,30 +18,15 @@ numberButtons.forEach(number => {
 
 operatorButtons.forEach(operator => {
     operator.addEventListener('click', () => {
-        var displayOperator = document.getElementById('current').innerText;
-        displayOperator += operator.id;
-        return displayOutput(displayOperator);
+        if (operator.id == 'allClear'){
+            displayOutput('');
+        }
     })
 })
 
-backSpaceButton.addEventListener('click', () => {
-    num = document.getElementById('current').innerText.slice(0,-1)
-    return displayOutput(num);
-})
-
-allClearButton.addEventListener('click', () => {
-    curNum = document.getElementById('current').innerText
-    curNum = '';  
-    return displayOutput(curNum);
-})
-
-equalsButton.addEventListener('click', () => {
-    console.log(displayOutput())
-})
 
 
-/*
-function add (a,b) {
+/*function add (a,b) {
     return a+b;
 }
 function subtract (a,b) {

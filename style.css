@@ -23,7 +23,7 @@ body {
     border: 1px black solid;
     font-size: 2rem;
 }
-.span-two {
+#evaluate , #allClear {
     grid-column: span 2;
 }
 
