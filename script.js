@@ -8,10 +8,19 @@ const allClearButton = document.querySelector('#allClear');
 const equalsButton = document.querySelector('#evaluate');
 
 function displayOutput(num){
-    document.getElementById('current').innerText = num;
+    document.getElementById('current').innerText = num.toLocaleString('en');
 }
 
 equalsButton.addEventListener('click', () => {
+    var current = document.getElementById('current').innerText
+    var history = document.getElementById('history').innerText
+    lastValue = document.getElementById('current').innerText.substring(-1).slice(-1)
+    if( current == ''){
+        return
+    }
+    if (lastValue == '*' || lastValue == '/' ||lastValue == '+' ||lastValue == '-'){
+        alert('need to enter a number!');
+    }
     document.getElementById('history').innerText = document.getElementById('current').innerText + ' =';
     document.getElementById('current').innerText = eval(document.getElementById('history').innerText.slice(0,-1));
     
@@ -51,11 +60,11 @@ backSpaceButton.addEventListener('click', () => {
 })
 
 allClearButton.addEventListener('click', () => {
-    curNum = document.getElementById('current').innerText
-    curNum = '';  
+    num = document.getElementById('current').innerText
+    num = '';  
     operatorCount = 1;
     document.getElementById('history').innerText = ''
-    return displayOutput(curNum);
+    return displayOutput(num);
     
 })
 
