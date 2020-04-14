@@ -1,5 +1,5 @@
 var operatorCount = 1; //count of operator used in the formula. this variable prevents user from entering consecutive operators
-var decimalCount = 0;
+var history = document.getElementById('history').innerText
 
 const numberButtons = document.querySelectorAll('.number');
 const operatorButtons = document.querySelectorAll('.operator');
@@ -13,13 +13,13 @@ function displayOutput(num){
 
 equalsButton.addEventListener('click', () => {
     var current = document.getElementById('current').innerText
-    var history = document.getElementById('history').innerText
     lastValue = document.getElementById('current').innerText.substring(-1).slice(-1)
     if( current == ''){
         return
     }
-    if (lastValue == '*' || lastValue == '/' ||lastValue == '+' ||lastValue == '-'){
+    if (lastValue == '*' || lastValue == '/' ||lastValue == '+' ||lastValue == '-'){ //prevents the user from being able to click evaluate when the last character is an operator.
         alert('need to enter a number!');
+        return;
     }
     document.getElementById('history').innerText = document.getElementById('current').innerText + ' =';
     document.getElementById('current').innerText = eval(document.getElementById('history').innerText.slice(0,-1));

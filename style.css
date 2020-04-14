@@ -22,9 +22,12 @@ body {
     outline: none;
     border: 1px black solid;
     font-size: 2rem;
+    transition: 0.5s;
 }
-#evaluate , #allClear {
-    grid-column: span 2;
+
+button:hover{
+    background-color: rgb(129, 123, 120);
+    color: white;
 }
 
 .displayScreen{
@@ -42,7 +45,19 @@ body {
 }
 #allClear{
     background-color: rgb(233, 108, 31);
+    grid-column: span 2;
 }
 #evaluate {
     background-color: rgb(207, 205, 204);
+    grid-column: span 3;
+}
+
+#evaluate:hover {
+    background-color: rgb(129, 123, 120);
+    color: white;
+}
+
+#allClear:hover {
+    background-color: rgb(207, 79, 0);
+    color: white;
 }
